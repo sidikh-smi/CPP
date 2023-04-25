@@ -12,3 +12,4 @@ $(NAME):
 
 fclean :
 	$(RM) $(NAME)
+re : fclean all

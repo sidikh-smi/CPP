@@ -13,7 +13,7 @@ int main(int argc, char **argv)
             while (argv[i][j])
             {
                 uppercase = toupper(argv[i][j]);
-                std :: cout << uppercase;
+                std::cout << uppercase;
                 j++;
             }
             std::cout << " ";
