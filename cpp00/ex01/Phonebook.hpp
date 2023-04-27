@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:33 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/27 16:50:38 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:53:44 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "contact.hpp"
 
 class phonebook{
+    contact cont[8];
     public:
-        contact cont[8];
         void add(int i);
         void search(int nmbr_cont);
        // exit(void);
