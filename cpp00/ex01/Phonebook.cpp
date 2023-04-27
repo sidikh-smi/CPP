@@ -6,11 +6,12 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:16 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/27 09:31:54 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:49:58 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+#include "contact.hpp"
 
 void    phonebook::add(int i)
 {
@@ -68,17 +69,20 @@ void    phonebook::search(int nmbr_cont)
             std::cout << std::setw(10) << ft_string(cont[i].getlastname()) << "|";
             std::cout << std::setw(10) << ft_string(cont[i].getnickname()) << "\n";
         }
-       // while(1)
-        std::cout << "Enter a valid index" << std::endl;
-        std::cin >> index;
-        if (index >= nmbr_cont)
-            std::cout << "Wrong index\n" << std::endl;
-        else{
-            std::cout << "First Name : " << cont[index].getfirstname() << "\n";
-            std::cout << "Last Name : " << cont[index].getlastname() << "\n";
-            std::cout << "Nick Name : " << cont[index].getnickname() << "\n";
-            std::cout << "Phone Number : " << cont[index].getphonenumber() << "\n";
-            std::cout << "Darkest Secret : " << cont[index].getdarkestsecret() << "\n";
+        while(1)
+        {
+             std::cout << "Enter a valid index" << std::endl;
+             std::cin >> index;
+             if (index >= nmbr_cont)
+                 std::cout << "Wrong index\n" << std::endl;
+             else{
+                 std::cout << "First Name : " << cont[index].getfirstname() << "\n";
+                 std::cout << "Last Name : " << cont[index].getlastname() << "\n";
+                 std::cout << "Nick Name : " << cont[index].getnickname() << "\n";
+                 std::cout << "Phone Number : " << cont[index].getphonenumber() << "\n";
+                 std::cout << "Darkest Secret : " << cont[index].getdarkestsecret() << "\n";
+                break;
+                }
         }
         break ;
     }

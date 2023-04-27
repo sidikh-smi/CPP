@@ -6,11 +6,12 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 02:11:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/27 09:33:39 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:49:48 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+#include "contact.hpp"
 
 std::string ft_string(std::string str)
 {
