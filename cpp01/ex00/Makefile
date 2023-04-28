@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/25 19:29:20 by skhaliff          #+#    #+#              #
-#    Updated: 2023/04/28 14:13:35 by skhaliff         ###   ########.fr        #
+#    Created: 2023/04/28 14:13:24 by skhaliff          #+#    #+#              #
+#    Updated: 2023/04/28 14:14:34 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-SRCS = megaphone.cpp
+NAME = zombie
+SRCS = zombie.cpp main.cpp
 
 CC = c++
 RM = rm -rf
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
