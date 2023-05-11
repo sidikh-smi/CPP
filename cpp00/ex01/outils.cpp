@@ -24,17 +24,17 @@ std::string ft_string(std::string str)
 
 void    contact::setfirtsname(std::string firstname)
 {
-    this->first_name = firstname;
+    first_name = firstname;
 }
 
 void    contact::setlastsname(std::string lastname)
 {
-    this->last_name = lastname;
+    last_name = lastname;
 }
 
 void    contact::setnickname(std::string nickname)
 {
-    this->nick_name = nickname;
+    nick_name = nickname;
 }
 
 void    contact::setphonenumber(std::string phonenumber)
@@ -49,35 +49,35 @@ void    contact::setphonenumber(std::string phonenumber)
     //     }
     //     i++;
     // }
-    this->phone_number = phonenumber;
+    phone_number = phonenumber;
 }
 
 void    contact::setdarkestsecret(std::string darkestname)
 {
-    this->darkest_secret = darkestname;
+    darkest_secret = darkestname;
 }
 
 std::string contact::getfirstname()
 {
-    return(this->first_name);
+    return(first_name);
 }
 
 std::string contact::getlastname()
 {
-    return(this->last_name);
+    return(last_name);
 }
 
 std::string contact::getnickname()
 {
-    return(this->nick_name);
+    return(nick_name);
 }
 
 std::string contact::getphonenumber()
 {
-    return(this->phone_number);
+    return(phone_number);
 }
 
 std::string contact::getdarkestsecret()
 {
-    return(this->darkest_secret);
+    return(darkest_secret);
 }

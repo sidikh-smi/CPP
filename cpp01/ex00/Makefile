@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = zombie
-SRCS = zombie.cpp main.cpp
+SRCS = zombie.cpp main.cpp newzombie.cpp randomchump.cpp
 
 CC = c++
 RM = rm -rf

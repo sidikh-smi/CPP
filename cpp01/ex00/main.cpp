@@ -14,8 +14,9 @@
 
 int main()
 {
-    zombie zombie;
-
-    zombie.setname("zakaria");
-    zombie.announce();
+    Zombie *zombie = newZombie("hello");
+    zombie->announce();
+    randomChump(" world");
+    delete(zombie);
+   // system("leaks zombie");
 }

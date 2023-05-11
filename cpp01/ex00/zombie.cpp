@@ -12,12 +12,17 @@
 
 #include "zombie.hpp"
 
-void    zombie::setname(std::string s)
+Zombie::Zombie(std::string name): name(name)
 {
-    this->name = s;
+    std::cout << "Welcome : " << name << std::endl;
 }
 
-void    zombie::announce(void)
+Zombie::~Zombie(void)
+{
+    std::cout << "bye!!!" << std::endl;
+}
+
+void    Zombie::announce(void)
 {
     std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
