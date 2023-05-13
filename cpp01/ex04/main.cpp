@@ -1,4 +1,18 @@
-#include "sed.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/11 12:14:00 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/05/12 18:52:47 by skhaliff         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include <fstream>
+#include <string>
 
 int main(int argc, char **argv)
 {
@@ -7,17 +21,34 @@ int main(int argc, char **argv)
         std::cout << "Error there must be Four parameters " << std::endl;
         return 1;
     }
-    std::ifstream   input_filename(argv[1]);
+    std::string filename = argv[1];
+    std::string s1 = argv[2];
+    std::string s2 = argv[3];
+    std::ifstream input_filename(filename);
     if (!input_filename.is_open())
     {
         std::cout << "Error the input file are not open!!! " << std::endl;
         return 1;
     }
-    std::string output_file = std::string(argv[1]) + ".replace";
-    std::ofstream output_filename(output_file);
+    std::ofstream output_filename(filename + ".replace");
     if (!output_filename.is_open())
     {
-        std::cout << "Error the output file are not open!!! " << std::endl;
+        std::cout << "Error the output file are not created!!! " << std::endl;
         return 1;
+    }
+    std::string str;
+    while(std::getline(input_filename, str))
+    {
+        size_t pos = 0;
+        if (!s1.empty())
+        {
+            while((pos = str.find(s1, pos) ) != std::string::npos)
+            {
+                str.erase(pos, s1.length());
+                str.insert(pos, s2);
+                pos += s2.length();
+            }
+        }
+       output_filename << str << std::endl;
     }
 }

@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/11 12:14:50 by skhaliff          #+#    #+#              #
-#    Updated: 2023/05/11 12:14:51 by skhaliff         ###   ########.fr        #
+#    ccreated: 2023/05/11 12:14:04 by skhaliff          #+#    #+#              #
+#    Updated: 2023/05/11 15:51:52 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
-SRCS = Zombie.cpp main.cpp zombieHorde.cpp 
+NAME = sed
+SRccS = main.cpp sed.cpp
 
-CC = c++
+cccc = c++
 RM = rm -rf
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(SRccS)
+	$(cccc) $(FLAGS) $(SRccS) -o $(NAME)
 
 fclean :
 	$(RM) $(NAME)

@@ -1,4 +1,5 @@
 #include "Phonebook.hpp"
+#include <fstream>
 
 void    phonebook::add(int i)
 {
@@ -7,35 +8,45 @@ void    phonebook::add(int i)
     while(1)
     {
         std::cout << "Firstname : " ;
-        std::cin >> s ;
+        getline(std::cin , s);
+        if(s.size() == 0)
+            continue;
         break ;
     }
     cont[i % 8].setfirtsname(s);
     while (1)
     {
         std::cout << "Lastname : ";
-        std::cin >> s;
+        getline(std::cin , s);
+        if(s.size() == 0)
+            continue;
         break ;
     }
     cont[i % 8].setlastsname(s);
     while (1)
     {
         std::cout << "nickname : ";
-        std::cin >> s;
+        getline(std::cin , s);
+        if(s.size() == 0)
+            continue;
         break ;
     }
     cont[i % 8].setnickname(s);
     while (1)
     {
         std::cout << "Phonenumber : ";
-        std::cin >> s;
+        getline(std::cin , s);
+        if(s.size() == 0)
+            continue;
         break ;
     }
     cont[i % 8].setphonenumber(s);
     while (1)
     {
         std::cout << "DarkestSecret : ";
-        std::cin >> s;
+        getline(std::cin , s);
+        if(s.size() == 0)
+            continue;
         break ;
     }
     cont[i % 8].setdarkestsecret(s);
@@ -43,8 +54,8 @@ void    phonebook::add(int i)
 
 void    phonebook::search(int nmbr_cont)
 {
-    int i;
-    int index;
+    int i, j;
+    std::string  index;
 
     while (1)
     {
@@ -59,15 +70,16 @@ void    phonebook::search(int nmbr_cont)
         while(1)
         {
              std::cout << "Enter a valid index" << std::endl;
-             std::cin >> index;
-             if (index >= nmbr_cont)
+             getline(std::cin , index);
+             j = index[0] - 48;
+             if (j >= nmbr_cont)
                  std::cout << "Wrong index\n" << std::endl;
              else{
-                 std::cout << "First Name : " << cont[index].getfirstname() << "\n";
-                 std::cout << "Last Name : " << cont[index].getlastname() << "\n";
-                 std::cout << "Nick Name : " << cont[index].getnickname() << "\n";
-                 std::cout << "Phone Number : " << cont[index].getphonenumber() << "\n";
-                 std::cout << "Darkest Secret : " << cont[index].getdarkestsecret() << "\n";
+                 std::cout << "First Name : " << cont[j].getfirstname() << "\n";
+                 std::cout << "Last Name : " << cont[j].getlastname() << "\n";
+                 std::cout << "Nick Name : " << cont[j].getnickname() << "\n";
+                 std::cout << "Phone Number : " << cont[j].getphonenumber() << "\n";
+                 std::cout << "Darkest Secret : " << cont[j].getdarkestsecret() << "\n";
                 break;
                 }
         }

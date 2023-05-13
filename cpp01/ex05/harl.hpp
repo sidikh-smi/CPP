@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 12:14:47 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 17:32:38 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/05/11 15:53:54 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/05/11 16:10:02 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
+#include <iostream>
 
-int main()
-{
-    int N = 0;
-    zombie *z = zombieHorde(N, "simo");
-    int i = 0;
-    if (!z)
-        return 1;
-    while (i < N)
-    {
-        z[i].annonce();
-        i++;
-    }
-    delete[] z;
-   // system("leaks zombie");
-}
+class Harl{
+    private :
+        void    debug();
+        void    info();
+        void    warning();
+        void    error();
+    public:
+        void  complain( std::string level);
+};
+
+#endif

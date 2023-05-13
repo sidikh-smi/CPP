@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/27 16:49:30 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/12 19:57:59 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
         std::cout << "3. EXIT " << std::endl;
         while (1)
         {
-            std::cin >> s;
+            getline(std::cin , s);
             if (std::cin.eof())
                 exit(0);
             if (!s.compare("ADD"))

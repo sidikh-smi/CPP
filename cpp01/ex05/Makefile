@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/11 12:14:50 by skhaliff          #+#    #+#              #
-#    Updated: 2023/05/11 12:14:51 by skhaliff         ###   ########.fr        #
+#    Created: 2023/05/11 15:52:36 by skhaliff          #+#    #+#              #
+#    Updated: 2023/05/11 15:52:37 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
-SRCS = Zombie.cpp main.cpp zombieHorde.cpp 
+NAME = harl
+SRCS = main.cpp harl.cpp
 
 CC = c++
 RM = rm -rf
