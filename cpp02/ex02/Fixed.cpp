@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:14:19 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/17 23:16:15 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/17 23:56:32 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,38 @@ Fixed Fixed::operator--(int)
     Fixed tmp = *this;
     --*this;
     return *this;
+}
+
+Fixed& Fixed::min(Fixed &a, Fixed &b)
+{
+    if (a.fixed_po < b.fixed_po)
+        return a;
+    else
+        return b;
+}
+
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
+{
+    if (a.fixed_po < b.fixed_po)
+        return a;
+    else
+        return b;
+}
+
+Fixed& Fixed::max(Fixed &a, Fixed &b)
+{
+    if (a.fixed_po > b.fixed_po)
+        return a;
+    else
+        return b;
+}
+
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
+{
+    if (a.fixed_po > b.fixed_po)
+        return a;
+    else
+        return b;
 }
 
 int Fixed::toInt() const
