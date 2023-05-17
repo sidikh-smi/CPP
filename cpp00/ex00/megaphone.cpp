@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:22 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/26 19:19:14 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:38:13 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(int argc, char **argv)
                 std::cout << uppercase;
                 j++;
             }
-            std::cout << " ";
             i++;
         }
         std::cout << "\n";

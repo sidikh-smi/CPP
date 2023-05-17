@@ -7,7 +7,13 @@ void    phonebook::add(int i)
 
     while(1)
     {
+
         std::cout << "Firstname : " ;
+        if (std::cin.eof())
+        {
+            std::cout << "Bye!!!" << std::endl;
+            exit(0);
+        }
         getline(std::cin , s);
         if(s.size() == 0)
             continue;
@@ -18,6 +24,11 @@ void    phonebook::add(int i)
     {
         std::cout << "Lastname : ";
         getline(std::cin , s);
+        if (std::cin.eof())
+        {
+            std::cout << "Bye!!!" << std::endl;
+            exit(0);
+        }
         if(s.size() == 0)
             continue;
         break ;
@@ -27,6 +38,11 @@ void    phonebook::add(int i)
     {
         std::cout << "nickname : ";
         getline(std::cin , s);
+        if (std::cin.eof())
+        {
+            std::cout << "Bye!!!" << std::endl;
+            exit(0);
+        }
         if(s.size() == 0)
             continue;
         break ;
@@ -36,6 +52,11 @@ void    phonebook::add(int i)
     {
         std::cout << "Phonenumber : ";
         getline(std::cin , s);
+        if (std::cin.eof())
+        {
+            std::cout << "Bye!!!" << std::endl;
+            exit(0);
+        }
         if(s.size() == 0)
             continue;
         break ;
@@ -45,6 +66,11 @@ void    phonebook::add(int i)
     {
         std::cout << "DarkestSecret : ";
         getline(std::cin , s);
+        if (std::cin.eof())
+        {
+            std::cout << "Bye!!!" << std::endl;
+            exit(0);
+        }
         if(s.size() == 0)
             continue;
         break ;
@@ -71,6 +97,13 @@ void    phonebook::search(int nmbr_cont)
         {
              std::cout << "Enter a valid index" << std::endl;
              getline(std::cin , index);
+            if (std::cin.eof())
+            {
+                std::cout << "Bye!!!" << std::endl;
+                exit(0);
+            }
+             if (index.size() > 1)
+                continue ;
              j = index[0] - 48;
              if (j >= nmbr_cont)
                  std::cout << "Wrong index\n" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 02:11:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/12 19:39:51 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:45:13 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,6 @@ void    contact::setnickname(std::string nickname)
 
 void    contact::setphonenumber(std::string phonenumber)
 {
-    // int i = 0;
-    // while (phonenumber[i])
-    // {
-    //     if (phonenumber[i] < '0' || phonenumber[i] > '9')
-    //     {
-    //         std::cout << "invalid number" << std::endl;
-    //         exit(0);
-    //     }
-    //     i++;
-    // }
     phone_number = phonenumber;
 }
 

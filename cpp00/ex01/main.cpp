@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/12 19:57:59 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:40:00 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int main()
         {
             getline(std::cin , s);
             if (std::cin.eof())
+            {
+                std::cout << "Bye!!!" << std::endl;
                 exit(0);
+            }
             if (!s.compare("ADD"))
             {
                 std::cout << "Add contact " << std::endl;

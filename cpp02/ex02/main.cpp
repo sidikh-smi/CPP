@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 19:11:43 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/16 21:54:29 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/05/17 15:30:19 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/05/17 23:25:20 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 int main( void ) {
 Fixed a;
-Fixed b( a );
-Fixed c;
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+//Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+std::cout << a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+//std::cout << b << std::endl;
+//std::cout << Fixed::max( a, b ) << std::endl;
 return 0;
 }
