@@ -6,16 +6,16 @@
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:40:45 by skhaliff          #+#    #+#              #
-#    Updated: 2023/05/12 15:49:20 by skhaliff         ###   ########.fr        #
+#    Updated: 2023/05/19 23:29:46 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = HarlFilter
 SRCS = main.cpp harl.cpp
 
 CC = c++
 RM = rm -rf
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 
 all: $(NAME)
 

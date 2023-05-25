@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:33 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/27 20:53:44 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:44 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 # include <iostream>
 # include <iomanip>
-# include "contact.hpp"
+# include "Contact.hpp"
 
-class phonebook{
-    contact cont[8];
+class PhoneBook{
+    Contact cont[8];
     public:
         void add(int i);
         void search(int nmbr_cont);
-       // exit(void);
 };
 
 std::string ft_string(std::string str);

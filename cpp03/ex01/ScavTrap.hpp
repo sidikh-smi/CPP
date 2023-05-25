@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sed.hpp                                            :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 12:14:09 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 14:26:20 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/05/22 20:26:23 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/05/22 23:15:35 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-#define SED_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include <iostream>
-#include <fstream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class Sed{
-
+class ScavTrap : public ClapTrap
+{ 
+    public :
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap &a);
+        ScavTrap &operator=(const ScavTrap &src);
+        ~ScavTrap();
+        void attack(const std::string& target);
+        void guardGate();
 };
 
 #endif

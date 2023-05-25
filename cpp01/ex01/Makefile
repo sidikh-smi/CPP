@@ -6,12 +6,12 @@
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/11 12:14:50 by skhaliff          #+#    #+#              #
-#    Updated: 2023/05/11 12:14:51 by skhaliff         ###   ########.fr        #
+#    Updated: 2023/05/18 21:54:30 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
-SRCS = Zombie.cpp main.cpp zombieHorde.cpp 
+NAME = Zombie
+SRCS = Zombie.cpp main.cpp ZombieHorde.cpp 
 
 CC = c++
 RM = rm -rf

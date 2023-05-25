@@ -6,12 +6,12 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:15:04 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/28 15:03:28 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:54:30 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef Zombie_HPP
+# define Zombie_HPP
 
 # include <iostream>
 

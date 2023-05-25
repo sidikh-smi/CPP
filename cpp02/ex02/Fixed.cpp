@@ -6,103 +6,109 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:14:19 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/17 23:56:32 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:24:46 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 
-Fixed::Fixed(): fixed_po(0)
+Fixed::Fixed()
 {
-    std::cout << "Default constructor called " << std::endl;
+    fixedPo = 0;
 }
 
 Fixed::Fixed(const Fixed &s)
 {
-    std::cout << "Copy constructor called" << std::endl;
-    fixed_po = s.fixed_po;
+    this->fixedPo = s.fixedPo;
 }
 
 Fixed::Fixed(const int a)
 {
-    fixed_po = a << bits;
+    fixedPo = a << bits;
 }
 
 Fixed::Fixed(const float b)
 {
-    fixed_po = roundf(b * (1 << 8));
+    fixedPo = roundf(b * (1 << 8));
 }
 
 Fixed &Fixed::operator =(const Fixed &src)
 {
     if (this != &src)
-        this->fixed_po = src.getRawBits();
+        this->fixedPo = src.getRawBits();
     return *this;
 }
 
-
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
-}
 
+}
 
 bool Fixed::operator>(Fixed &a)
 {
-    return fixed_po > a.fixed_po;
+    return fixedPo > a.fixedPo;
 }
 
 bool Fixed::operator<(Fixed &a)
 {
-    return fixed_po < a.fixed_po;
+    return fixedPo < a.fixedPo;
 }
 
 bool Fixed::operator>=(Fixed &a)
 {
-    return fixed_po >= a.fixed_po;
+    return fixedPo >= a.fixedPo;
 }
 
 bool Fixed::operator<=(Fixed &a)
 {
-    return fixed_po <= a.fixed_po;
+    return fixedPo <= a.fixedPo;
 }
 
 bool Fixed::operator==(Fixed &a)
 {
-    return fixed_po == a.fixed_po;
+    return fixedPo == a.fixedPo;
 }
 
 bool Fixed::operator!=(Fixed &a)
 {
-    return fixed_po != a.fixed_po;
+    return fixedPo != a.fixedPo;
 }
 
-Fixed Fixed::operator+(Fixed &a)
+Fixed Fixed::operator+(Fixed const &a)
 {
-    return Fixed(fixed_po + a.fixed_po);
+    Fixed b;
+    b.setRawBits(fixedPo + a.fixedPo);
+    return b;
 }
 
-Fixed Fixed::operator-(Fixed &a)
+Fixed Fixed::operator-(Fixed const &a)
 {
-    return Fixed(fixed_po - a.fixed_po);
+    Fixed b;
+    b.setRawBits(fixedPo - a.fixedPo);
+    return b;
 }
-
-// a = b * c * d
 
 Fixed Fixed::operator*(Fixed &a)
 {
-    return Fixed(fixed_po * a.fixed_po);
+    Fixed b;
+    b.setRawBits(fixedPo * a.fixedPo / 256);
+    return b;
 }
 
-Fixed Fixed::operator/(Fixed &a)
+Fixed Fixed::operator/(Fixed const &a)
 {
-    return Fixed(fixed_po / a.fixed_po);
+    Fixed b;
+    if (a.fixedPo != 0)
+        b.setRawBits((fixedPo << 8) / a.fixedPo);
+    else 
+        std::cout << "----------- " << std::endl;
+    return b;
 }
 
 Fixed& Fixed::operator++()
 {
-    ++fixed_po;
+    ++fixedPo;
     return *this;
 }
 
@@ -115,7 +121,7 @@ Fixed Fixed::operator++(int)
 
 Fixed& Fixed::operator--()
 {
-    --fixed_po;
+    fixedPo--;
     return *this;
 }
 
@@ -128,7 +134,7 @@ Fixed Fixed::operator--(int)
 
 Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
-    if (a.fixed_po < b.fixed_po)
+    if (a.fixedPo < b.fixedPo)
         return a;
     else
         return b;
@@ -136,7 +142,7 @@ Fixed& Fixed::min(Fixed &a, Fixed &b)
 
 const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 {
-    if (a.fixed_po < b.fixed_po)
+    if (a.fixedPo < b.fixedPo)
         return a;
     else
         return b;
@@ -144,7 +150,7 @@ const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 
 Fixed& Fixed::max(Fixed &a, Fixed &b)
 {
-    if (a.fixed_po > b.fixed_po)
+    if (a.fixedPo > b.fixedPo)
         return a;
     else
         return b;
@@ -152,7 +158,7 @@ Fixed& Fixed::max(Fixed &a, Fixed &b)
 
 const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 {
-    if (a.fixed_po > b.fixed_po)
+    if (a.fixedPo > b.fixedPo)
         return a;
     else
         return b;
@@ -161,31 +167,29 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 int Fixed::toInt() const
 {
     int a;
-    a = fixed_po >> 8;
+    a = fixedPo >> 8;
     return a;
 }
 
 float Fixed::toFloat() const 
 {
     float b;
-    b = (float)fixed_po / 256;
+    b = (float)fixedPo / 256;
     return b;
 }
 
 std::ostream& operator<<(std::ostream &os, const Fixed &f)
 {
-    //std::cout << f.getRawBits()<< std::endl;
     os << f.toFloat();
     return os;
 }
 
 void    Fixed::setRawBits(int const raw)
 {
-    fixed_po = raw;
+    fixedPo = raw;
 }
 
 int     Fixed::getRawBits(void) const
 {
-    //std::cout << "getRawBits member function called"  << std::endl;
-    return fixed_po;
+    return fixedPo;
 }

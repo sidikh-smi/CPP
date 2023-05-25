@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:14:00 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/12 18:52:47 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/20 01:25:34 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int main(int argc, char **argv)
         return 1;
     }
     std::string str;
-    while(std::getline(input_filename, str))
-    {
+    bool a;
+    a = std::getline(input_filename, str);
+    while(a)
+    { 
         size_t pos = 0;
         if (!s1.empty())
         {
@@ -49,6 +51,9 @@ int main(int argc, char **argv)
                 pos += s2.length();
             }
         }
-       output_filename << str << std::endl;
+        output_filename << str;
+        a = std::getline(input_filename, str);
+        if(a)
+            output_filename << std::endl;
     }
 }

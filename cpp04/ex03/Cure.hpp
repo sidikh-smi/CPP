@@ -1,0 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/25 11:23:05 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/05/25 11:24:56 by skhaliff         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CURE_HPP
+#define CURE_HPP
+
+#include "AMateria.hpp"
+
+class Cure : public AMateria
+{
+    public :
+        Cure();
+        Cure operator=(const Cure& src);
+        ~cure
+}

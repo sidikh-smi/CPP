@@ -6,16 +6,16 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:14:47 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 17:32:38 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/20 00:23:22 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 int main()
 {
-    int N = 0;
-    zombie *z = zombieHorde(N, "simo");
+    int N = 5;
+    Zombie *z = zombieHorde(N, "simo");
     int i = 0;
     if (!z)
         return 1;
@@ -25,5 +25,4 @@ int main()
         i++;
     }
     delete[] z;
-   // system("leaks zombie");
 }

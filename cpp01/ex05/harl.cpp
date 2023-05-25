@@ -6,11 +6,11 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:52:46 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/12 19:02:18 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:59:50 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "harl.hpp"
+#include "Harl.hpp"
 
 void    Harl::debug()
 {

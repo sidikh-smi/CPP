@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:14:20 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 12:14:21 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/20 00:49:11 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanB{
         Weapon* weaponB;
     public :
         void    attack();
-        void    setWeapon(Weapon& w);
+        void    setWeapon(Weapon &w);
         HumanB(std::string s);
         ~HumanB();
 };

@@ -6,11 +6,11 @@
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/11 12:14:29 by skhaliff          #+#    #+#              #
-#    Updated: 2023/05/11 12:14:30 by skhaliff         ###   ########.fr        #
+#    Updated: 2023/05/18 21:54:30 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = Zombie
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 CC = c++

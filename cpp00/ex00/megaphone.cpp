@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:22 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/16 17:38:13 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:20:16 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 int main(int argc, char **argv)
 {
     int i = 1;
-    char    uppercase;
     if (argc >= 2)
     {
         while (argv[i])
@@ -24,8 +23,8 @@ int main(int argc, char **argv)
             int j = 0;
             while (argv[i][j])
             {
-                uppercase = toupper(argv[i][j]);
-                std::cout << uppercase;
+                argv[i][j] = toupper(argv[i][j]);
+                std::cout << argv[i][j];
                 j++;
             }
             i++;

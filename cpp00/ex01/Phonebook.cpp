@@ -1,7 +1,7 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <fstream>
 
-void    phonebook::add(int i)
+void    PhoneBook::add(int i)
 {
     std::string s;
 
@@ -78,11 +78,13 @@ void    phonebook::add(int i)
     cont[i % 8].setdarkestsecret(s);
 }
 
-void    phonebook::search(int nmbr_cont)
+void    PhoneBook::search(int nmbr_cont)
 {
     int i, j;
     std::string  index;
 
+    if (nmbr_cont == 0)
+        return ;
     while (1)
     {
         std::cout << "*  Index  |  First Name|  Last Name| Nick Name *" << std::endl;
@@ -95,8 +97,10 @@ void    phonebook::search(int nmbr_cont)
         }
         while(1)
         {
-             std::cout << "Enter a valid index" << std::endl;
-             getline(std::cin , index);
+            std::cout << "Enter a valid index" << std::endl;
+            getline(std::cin , index);
+            if (index == "")
+                continue;
             if (std::cin.eof())
             {
                 std::cout << "Bye!!!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:04:40 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/17 23:56:38 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/22 00:12:37 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Fixed{
     private :
-        int fixed_po;
+        int fixedPo;
         static  const int bits = 8;
     public :
         Fixed();
@@ -37,10 +37,10 @@ class Fixed{
         bool operator<=(Fixed &a);
         bool operator==(Fixed &a);
         bool operator!=(Fixed &a);
-        Fixed operator+(Fixed &a);
-        Fixed operator-(Fixed &a);
+        Fixed operator+(Fixed const &a);
+        Fixed operator-(Fixed const &a);
         Fixed operator*(Fixed &a);
-        Fixed operator/(Fixed &a);
+        Fixed operator/(Fixed const &a);
         Fixed& operator++(void);
         Fixed operator++(int);
         Fixed& operator--(void);

@@ -6,15 +6,15 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:29:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/16 17:40:00 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:44 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main()
 {
-    phonebook phone;
+    PhoneBook phone;
     std::string s;
     int i = 0;
     int nmbr_cont = 0;
@@ -35,7 +35,7 @@ int main()
             }
             if (!s.compare("ADD"))
             {
-                std::cout << "Add contact " << std::endl;
+                std::cout << "Add Contact " << std::endl;
                 phone.add(i);
                 if (nmbr_cont < 8)
                     nmbr_cont++;
@@ -44,7 +44,7 @@ int main()
             }
             else if (!s.compare("SEARCH"))
             {
-                std::cout << "Search contact " << std::endl;
+                std::cout << "Search Contact " << std::endl;
                 phone.search(nmbr_cont);
                 break ;
             }

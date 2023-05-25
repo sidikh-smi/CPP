@@ -6,12 +6,12 @@
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 19:29:36 by skhaliff          #+#    #+#              #
-#    Updated: 2023/04/26 09:10:18 by skhaliff         ###   ########.fr        #
+#    Updated: 2023/05/18 15:22:44 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
-SRCS = main.cpp phonebook.cpp outils.cpp
+NAME = PhoneBook
+SRCS = main.cpp PhoneBook.cpp Contact.cpp
 
 CC = c++
 RM = rm -rf

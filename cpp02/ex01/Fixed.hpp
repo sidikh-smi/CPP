@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 22:13:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/17 18:13:49 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/22 00:38:28 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Fixed{
     private :
-        int fixed_po;
+        int fixedPo;
         static  const int bits = 8;
     public :
         Fixed();
@@ -31,8 +31,8 @@ class Fixed{
         int getRawBits( void ) const;
         float toFloat() const;
         int toInt() const;
-        
 };
+
 std::ostream& operator<<(std::ostream &os, const Fixed &f);
 
 

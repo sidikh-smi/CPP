@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:14:56 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 12:14:57 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/20 00:23:27 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef Zombie_HPP
+# define Zombie_HPP
 
 # include <iostream>
 
-class zombie{
+class Zombie{
     private:
         std::string name;
     public:
-        zombie();
-        ~zombie();
         void setname(std::string name);
         void annonce();
 };
 
-zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:14:22 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 12:14:23 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/20 00:49:20 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void    HumanB::attack()
         std::cout << name << " Has no weapon " << std::endl;
 }
 
-void    HumanB::setWeapon(Weapon& w)
+void    HumanB::setWeapon(Weapon &w)
 {
     weaponB = &w;
 }

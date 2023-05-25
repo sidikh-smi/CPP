@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 16:47:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/04/27 16:49:06 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:44 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef Contact_HPP
+# define Contact_HPP
 
 # include <iostream>
 # include <iomanip>
 
-class contact {
+class Contact {
     private:
         std::string first_name;
         std::string last_name;

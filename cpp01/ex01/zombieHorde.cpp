@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:15:00 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/11 17:31:38 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/20 00:23:31 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
-zombie* zombieHorde( int N, std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
     int i = 0;
     if (N < 1)
         return NULL;
-    zombie *z = new zombie[N];
+    Zombie *z = new Zombie[N];
     while(i < N)
     {
         z[i].setname(name);
