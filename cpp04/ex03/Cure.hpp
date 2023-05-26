@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 11:23:05 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/25 11:24:56 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/25 22:14:53 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ class Cure : public AMateria
 {
     public :
         Cure();
+        Cure(const Cure& src);
         Cure operator=(const Cure& src);
-        ~cure
+        ~cure();
+        AMateria* clone();
+        void   use(Icharater& target);
 }
