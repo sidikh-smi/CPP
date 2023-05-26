@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:55:48 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 19:48:10 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:08:30 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ Dog::Dog()
 Dog::Dog(const Dog &a)
 {
     std::cout << "Dog Copy Constructor Called" << std::endl;
-    type = a.type;
+    // type = a.type;
+    *this = a;
 }
 
 Dog &Dog::operator=(const Dog& src)

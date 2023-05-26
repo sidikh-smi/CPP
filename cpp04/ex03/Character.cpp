@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/25 11:23:05 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/26 16:58:11 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/05/26 17:00:27 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/05/26 17:03:25 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#include "Character.hpp"
 
-#include "AMateria.hpp"
-
-class Cure : public AMateria
+Character::Character()
 {
-    public :
-        Cure();
-        Cure(const Cure& src);
-        Cure operator=(const Cure& src);
-        ~cure();
-        AMateria* clone();
-        void   use(Icharater& target);
-};
+    std::cout << "Character Default Constructor Called" << std::endl;
+}
 
-#endif
+Character::Character(const Character& s)
+{
+    std::cout << "Character Copy Constructor Called" << std::endl;
+    *this = s;
+}

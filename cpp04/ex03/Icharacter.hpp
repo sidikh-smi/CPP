@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 22:20:31 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/25 22:22:48 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:54:29 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ICHARACTER_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
 
 class ICharacter
 {

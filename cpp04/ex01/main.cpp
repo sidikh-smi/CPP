@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:58:18 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 21:16:24 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:10:48 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,30 @@ int main()
     // delete b;
     // std::cout << "            Brain         " << std::endl;
 
-    Animal *s[6];
-    int q;
-    for( q = 0; q < 6; q++)
-    {
-        if (q < 3)
-            s[q] = new Dog();
-        else
-            s[q] = new Cat();
-    }
-    for (int i=0; i <6; i++)
-        s[i]->makeSound();
-     s[5]->getType();
-    for(q = 0; q < 6; q++)
-        delete s[q];
+
+        Dog test;
+        {
+            Dog *tmp = &test;
+            tmp->getType();
+        }
+
+
+
+
+    // Animal *s[6];
+    // int q;
+    // for( q = 0; q < 6; q++)
+    // {
+    //     if (q < 3)
+    //         s[q] = new Dog();
+    //     else
+    //         s[q] = new Cat();
+    // }
+    // for (int i=0; i <6; i++)
+    //     s[i]->makeSound();
+    //  s[5]->getType();
+    // for(q = 0; q < 6; q++)
+    //     delete s[q];
     //system("leaks Animal");
     return 0;
 }
