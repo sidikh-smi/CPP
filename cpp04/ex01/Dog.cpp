@@ -22,8 +22,9 @@ Dog::Dog()
 Dog::Dog(const Dog &a)
 {
     std::cout << "Dog Copy Constructor Called" << std::endl;
-    // type = a.type;
-    *this = a;
+    s = new Brain();
+    s = a.s;
+    type = a.type;
 }
 
 Dog &Dog::operator=(const Dog& src)

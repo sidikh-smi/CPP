@@ -46,8 +46,9 @@ int main()
 
         Dog test;
         {
-            Dog *tmp = &test;
-            tmp->getType();
+            Dog tmp = test;
+            tmp.getType();
+
         }
 
 

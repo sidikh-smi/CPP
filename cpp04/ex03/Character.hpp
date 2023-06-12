@@ -14,9 +14,12 @@
 #define CHARACTER_HPP
 
 #include "Icharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public Icharacter
 {
+    private :
+        AMataria a[4];
     public :
         Character();
         Character(const Character& s);
