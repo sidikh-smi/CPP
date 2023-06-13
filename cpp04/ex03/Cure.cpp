@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 19:49:23 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/25 22:20:12 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 01:27:06 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cure::Cure(const Cure &s)
     name = s.name;
 }
 
-Cure Cure::operator=(const Cure &src)
+Cure &Cure::operator=(const Cure &src)
 {
     if (this != &src)
         name = src.name;
@@ -31,16 +31,15 @@ Cure Cure::operator=(const Cure &src)
 
 Cure::~Cure()
 {
-    std::cout << "Cure Destructor Called" << std::endl;
+    // std::cout << "Cure Destructor Called" << std::endl;
 }
 
-AMateria* Cure::clone()
+AMataria* Cure::clone() const 
 {
-    AMateria* s = new Cure();
-    return s;
+    return new Cure();
 }
 
-void    Cure::use(Icharacter& target)
+void    Cure::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
+    std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
 }

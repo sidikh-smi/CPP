@@ -6,14 +6,17 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 22:12:27 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/25 22:12:28 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 01:34:56 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Icharacter.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
 #include "AMataria.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
@@ -21,7 +24,7 @@ int main()
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
-    AMateria* tmp;
+    AMataria* tmp;
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
@@ -32,5 +35,7 @@ int main()
     delete bob;
     delete me;
     delete src;
+    while(1)
+        ;
     return 0;
-}   
+}

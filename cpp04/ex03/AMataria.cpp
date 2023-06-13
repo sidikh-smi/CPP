@@ -1,48 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   AMataria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 22:36:18 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/25 11:26:14 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 00:25:13 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "AMataria.hpp"
 
-AMateria::AMateria()
+AMataria::AMataria()
 {
-    std::cout << "Default Constructor Called" << std::endl;
+    // std::cout << "Default Constructor Called" << std::endl;
     name = "";
 }
 
-AMateria::AMateria(const AMateria& s)
+AMataria::AMataria(const AMataria& s)
 {
     name = s.name;
 }
 
-AMateria::AMateria(const std::string &s)
+AMataria::AMataria(const std::string &s)
 {
     name = s;
 }
 
-AMateria::operator=(const AMateria& src)
+AMataria &AMataria::operator=(const AMataria& src)
 {
     if (this != &src)
-    {
         name = src.name;
-    }
     return *this;
 }
 
-AMateria::~AMateria()
+AMataria::~AMataria()
 {
-    std::cout << "Deconstructor Called" << std::endl;
+    // std::cout << "Deconstructor Called" << std::endl;
 }
 
-const std::string& AMateria::getType() const
+const std::string& AMataria::getType() const
 {
     return name;
+}
+
+void AMataria::use(ICharacter& target)
+{
+    std::cout << "hello from " << target.getName() << std::endl;
 }

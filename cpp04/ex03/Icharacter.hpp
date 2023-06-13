@@ -6,22 +6,23 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 22:20:31 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/26 16:54:29 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 00:23:58 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#ifndef ICharacter_HPP
+#define ICharacter_HPP
 
 #include <iostream>
-#include "AMateria.hpp"
+// #include "AMataria.hpp"
+class AMataria;
 
 class ICharacter
 {
     public:
         virtual ~ICharacter() {}
         virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
+        virtual void equip(AMataria* m) = 0;
         virtual void unequip(int idx) = 0;
         virtual void use(int idx, ICharacter& target) = 0;
 };

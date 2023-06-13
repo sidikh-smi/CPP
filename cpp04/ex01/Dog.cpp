@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:55:48 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/26 17:08:30 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/12 10:25:59 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ Dog::Dog(const Dog &a)
 {
     std::cout << "Dog Copy Constructor Called" << std::endl;
     s = new Brain();
-    s = a.s;
-    type = a.type;
+    // s = a.s;
+    *this = a;
 }
 
 Dog &Dog::operator=(const Dog& src)
 {
     if (this != &src)
-        type = src.type;
+        // type = src.type;
+        *s = *src.s;
     // Animal::operator=(src);
     return *this;
 }
