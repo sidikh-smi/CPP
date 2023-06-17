@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 09:44:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/13 01:39:14 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 02:16:53 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 MateriaSource::MateriaSource()
 {
-    // std::cout << "MateriaSource Constructor Called" << std::endl;
     for(int i = 0; i <4; i++) 
        a[i] = NULL;
 
@@ -22,47 +21,49 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& s)
 {
-    // std::cout << "MateriaSource Copy Constructor Called" << std::endl;
+    for(int i = 0; i <4; i++) 
+       a[i] = NULL;
     *this = s;
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource& src)
 {
     if (this != &src)
-        *this = src;
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if (a[i])
+                delete a[i];
+            if (src.a[i])
+                a[i] = src.a[i]->clone();
+        }
+    }
     return *this;
 }
 
 MateriaSource::~MateriaSource()
 {
-    // std::cout << "MateriaSource Destructor Called" << std::endl;
-    for (int i=0;i<4;i++)
-        delete a[i];
+    for (int i = 0; i < 4 ;i++)
+        if (a[i])
+            delete a[i];
 }
 
-void    MateriaSource::learnMateria(AMataria* s)
+void    MateriaSource::learnMateria(AMateria* s)
 {
-    int i = 0;
-    while(i < 4)
+    for(int i = 0; i < 4; i++)
     {
         if (a[i] == NULL && s != NULL)
         {
             a[i] = s;
             return ;
         }
-        i++;
     }
 }
 
-AMataria* MateriaSource::createMateria(std::string const &t)
+AMateria*   MateriaSource::createMateria(std::string const &t)
 {
-    for (int i=0;i <4; i++)
-    {       
+    for (int i=0; i <4; i++)
         if (a[i] && (a[i]->getType() == t))
-        {
-            // std::cout << a[i]->getType() << "***" << t << std::endl;
             return (a[i]->clone());
-        }
-    }
     return (NULL);
 }

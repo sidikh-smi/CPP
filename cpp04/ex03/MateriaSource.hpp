@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 09:44:24 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/13 00:16:45 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:29:13 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 #define MATERIASOURCE_HPP
 
 #include "IMateriaSource.hpp"
-#include "AMataria.hpp"
+#include "AMateria.hpp"
 
-class AMataria;
+// class AMateria;
 
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMataria *a[4];
+        AMateria *a[4];
     public :
         MateriaSource();
         MateriaSource(const MateriaSource &s);
         MateriaSource &operator=(const MateriaSource &src);
         ~MateriaSource();
-        void learnMateria(AMataria*);
-        AMataria* createMateria(std::string const & type);
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif

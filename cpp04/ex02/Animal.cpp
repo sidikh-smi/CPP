@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:20:01 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 03:59:17 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:40:28 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,4 @@ Animal::~Animal()
 std::string Animal::getType() const 
 {
     return type;
-}
-
-
-void    Animal::makeSound() const
-{
-    std::cout << "MakeSound" << std::endl;
 }

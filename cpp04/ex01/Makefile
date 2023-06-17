@@ -6,7 +6,7 @@
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 08:11:26 by skhaliff          #+#    #+#              #
-#    Updated: 2023/05/24 19:59:32 by skhaliff         ###   ########.fr        #
+#    Updated: 2023/06/14 23:48:05 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cp
 
 CC = c++
 RM = rm -rf
-FLAGS = -Wall -Wextra -Werror -std=c++98 
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 all: $(NAME)
 

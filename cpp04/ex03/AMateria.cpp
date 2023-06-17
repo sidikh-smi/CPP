@@ -1,51 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMataria.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 22:36:18 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/13 00:25:13 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 02:15:14 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMataria.hpp"
+#include "AMateria.hpp"
 
-AMataria::AMataria()
+AMateria::AMateria()
 {
-    // std::cout << "Default Constructor Called" << std::endl;
     name = "";
 }
 
-AMataria::AMataria(const AMataria& s)
+AMateria::AMateria(const AMateria& s)
 {
     name = s.name;
 }
 
-AMataria::AMataria(const std::string &s)
+AMateria::AMateria(const std::string &s)
 {
     name = s;
 }
 
-AMataria &AMataria::operator=(const AMataria& src)
+AMateria &AMateria::operator=(const AMateria& src)
 {
     if (this != &src)
         name = src.name;
     return *this;
 }
 
-AMataria::~AMataria()
+AMateria::~AMateria()
 {
-    // std::cout << "Deconstructor Called" << std::endl;
+
 }
 
-const std::string& AMataria::getType() const
+const std::string& AMateria::getType() const
 {
     return name;
 }
 
-void AMataria::use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
     std::cout << "hello from " << target.getName() << std::endl;
 }

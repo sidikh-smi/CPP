@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:00:27 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/13 01:39:21 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:02:40 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,42 @@
 
 Character::Character()
 {
-    name = "Character";
-    // std::cout << "Character Default Constructor Called" << std::endl;
-    for(int i = 0; i <4; i++)
+    name = "";
+    for(int i = 0; i < 4; i++)
       a[i] = NULL;
 }
 
 Character::Character(std::string const &n) : name(n)
 {
     for(int i = 0; i <4; i++)
-    {
       a[i] = NULL;
-    }
 }
 
 Character::Character(const Character& s)
 {
-    // std::cout << "Character Copy Constructor Called" << std::endl;
+    for(int i = 0; i <4; i++)
+        a[i] = NULL;
     *this = s;
 }
 
 Character &Character::operator=(const Character &src)
 {
     if (this != &src)
-        *this = src;
-    return *this; 
+    {
+        for(int i  =0; i < 4; i++)
+        {
+            if (a[i])
+                delete a[i];
+            if (src.a[i])
+                a[i] = src.a[i]->clone();
+        }
+        name = src.name;
+    }
+    return *this;
 }
 
 Character::~Character()
 {
-    // std::cout << "Character Destructor Called " << std::endl;
      for (int i=0;i<4;i++)
         delete a[i];
 }
@@ -53,44 +59,29 @@ const std::string& Character::getName() const
     return (name);
 }
 
-void    Character::equip(AMataria* e)
+void    Character::equip(AMateria* e)
 {
-    int i = 0;
-    while (i < 4)
+    for(int i = 0; i  < 4; i++)
     {
         if (a[i] == NULL && e != NULL)
         {
             a[i] = e->clone();
             return ;
         }
-        i++;
     }
 }
 
 void    Character::unequip(int indx)
 {
-    int i = 0;
-    while(i < 4)
+    if (indx >=0 && indx < 4)
     {
-        if (i == indx)
-        {
-            a[i] = NULL;
-            return ;
-        }
-        i++;
+        a[indx] = NULL;
+        return ;
     }
 }
 
 void    Character::use(int indx, ICharacter &target)
 {
-    if (indx >= 0 && indx < 4)
-    {       
-        if (a[indx])
-        {
+    if (indx >= 0 && indx < 4 && a[indx])
             a[indx]->use(target);
-        }
-        else
-            std::cout << "ERROR" << std::endl;
-    }
-    
 }

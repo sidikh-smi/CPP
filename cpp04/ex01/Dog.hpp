@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 08:58:10 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 04:48:23 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:39:07 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog :public Animal
         Dog(const Dog& a);
         Dog &operator=(const Dog &src);
         ~Dog();
-        std::string    getType() const;
+       // std::string    getType() const;
         void    makeSound() const;
 };
 

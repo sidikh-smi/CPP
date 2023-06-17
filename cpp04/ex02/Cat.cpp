@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:48:56 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 20:08:20 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/14 23:35:32 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,31 @@ Cat::Cat()
 Cat::Cat(const Cat &a)
 {
     std::cout << "Cat Copy Constructor Called" << std::endl;
+    s = new Brain();
     type = a.type;
+    *s = *a.s;
 }
 
 Cat &Cat::operator=(const Cat& src)
 {
-    Animal::operator=(src);
+    
     if (this != &src)
+    {
+        if (s)
+            delete s;
+        s = new Brain();
         type = src.type;
+        *s = *src.s;
+    }
     return *this;
 }
 
-std::string    Cat::getType() const
-{
-    s->getbrain();
-    return ("finish my ideas");
-}
+// std::string    Cat::getType() const
+// {
+//     s->getbrain();
+//     return ("finish my ides");
+
+// }
 
 Cat::~Cat()
 {

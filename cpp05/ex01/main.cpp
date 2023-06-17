@@ -5,38 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 11:58:18 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/15 02:19:10 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/06/15 23:52:42 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/06/17 10:43:07 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Brain.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-    Cat test;
+    Bureaucrat b("sidi", 150);
+    Form a("ahmed", 2, 45);
+    //b.incrementing();
+    try
     {
-        Cat tmp = test;
-        std::cout << tmp.getType() << std::endl;
+        // if (b.getGrade() < 1)
+        //     throw Bureaucrat::GradeTooLowException();
+        // else if (b.getGrade() > 150)
+        //     throw Bureaucrat::GradeTooHighException();
+        b.signForm(a);
+        // std::cout << b << std::endl;
     }
-    Animal *s[6];
-    int q;
-    for( q = 0; q < 4; q++)
+    catch(const std::exception& e)
     {
-        if (q < 2)
-            s[q] = new Dog();
-        else
-            s[q] = new Cat();
+        std::cerr << e.what() << '\n';
     }
-    for (int i=0; i <4; i++)
-        s[i]->makeSound();
-    std::cout << s[2]->getType() << std::endl;
-    for(q = 0; q < 4; q++)
-        delete s[q];
     return 0;
 }

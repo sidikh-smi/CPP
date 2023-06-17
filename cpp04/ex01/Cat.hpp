@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 08:50:23 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 04:52:50 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:39:13 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public Animal
         Cat &operator=(const Cat &src);
         ~Cat();
         void    makeSound() const ;
-        std::string    getType() const;
+        //std::string    getType() const;
 };
 
 #endif

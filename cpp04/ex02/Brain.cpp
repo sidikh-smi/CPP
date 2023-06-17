@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:29:40 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/24 20:00:10 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:40:55 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,17 @@ Brain   &Brain::operator=(const Brain& src)
     return *this;
 }
 
-void Brain::getbrain() const
-{
-    int i = 0;
-    while(i < 5)
-    {
-        std::cout << ideas[i] << std::endl;
-        i++;
-    }
-}
 Brain::~Brain()
 {
     std::cout << "Brain Destructor Called " << std::endl;
 }
+
+// void Brain::getbrain() const
+// {
+//     int i = 0;
+//     while(i < 5)
+//     {
+//         std::cout << ideas[i] << std::endl;
+//         i++;
+//     }
+// }

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 19:49:23 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/13 01:27:06 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 02:03:10 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ Cure &Cure::operator=(const Cure &src)
 
 Cure::~Cure()
 {
-    // std::cout << "Cure Destructor Called" << std::endl;
 }
 
-AMataria* Cure::clone() const 
+AMateria* Cure::clone() const 
 {
-    return new Cure();
+    return new Cure(*this);
 }
 
 void    Cure::use(ICharacter& target)

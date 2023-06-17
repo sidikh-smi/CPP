@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/24 22:35:04 by skhaliff          #+#    #+#              #
-#    Updated: 2023/06/15 18:40:40 by skhaliff         ###   ########.fr        #
+#    Created: 2023/06/15 23:50:26 by skhaliff          #+#    #+#              #
+#    Updated: 2023/06/17 09:01:10 by skhaliff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AMateria
-SRCS = AMateria.cpp  Character.cpp Cure.cpp  Ice.cpp MateriaSource.cpp main.cpp 
+NAME = Form
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 CC = c++
 RM = rm -rf

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 22:12:31 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/13 01:27:01 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 01:56:58 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ Ice &Ice::operator=(const Ice &src)
 
 Ice::~Ice()
 {
-    // std::cout << "Ice Destructor Called" << std::endl;
 }
 
-AMataria* Ice::clone() const 
+AMateria* Ice::clone() const 
 {
-    return new Ice();
+    return new Ice(*this);
 }
 
 void    Ice::use(ICharacter& target)

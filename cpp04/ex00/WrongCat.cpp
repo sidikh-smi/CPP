@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:50:35 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/20 15:12:05 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/13 13:51:39 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ WrongCat::~WrongCat()
 
 void    WrongCat::makeSound() const
 {
-    std::cout << "e WrongAnimal sound" << std::endl;
+    std::cout << "WrongAnimal sound" << std::endl;
 }

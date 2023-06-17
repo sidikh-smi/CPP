@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 08:48:43 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/05/20 14:41:13 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/15 02:46:16 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Animal{
         Animal();
         Animal(const Animal& a);
         Animal &operator=(const Animal &src);
-        virtual ~Animal();
-        virtual std::string getType() const ;
+        ~Animal();
+        std::string getType() const ;
         virtual void    makeSound() const ;
 };
 
