@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:53:09 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/17 10:30:35 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/24 21:43:01 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
-class Form;
+#include "AForm.hpp"
+class AForm;
 
 class Bureaucrat{
     private:
@@ -42,7 +42,7 @@ class Bureaucrat{
         int getGrade() const;
         void    incrementing();
         void    decrementing();
-        void    signForm(Form a);
+        void    signForm(AForm a);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &a);

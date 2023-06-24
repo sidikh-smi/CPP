@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:49:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/18 22:35:03 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/24 21:44:56 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int main()
 {
-    
+    // Bureaucrat b();
+    // PresidentialPardonForm a()
 }

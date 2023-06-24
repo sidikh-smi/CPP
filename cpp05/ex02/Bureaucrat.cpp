@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:52:17 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/17 10:41:23 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/06/24 21:43:36 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void    Bureaucrat::decrementing()
     i++;
 }
 
-void    Bureaucrat::signForm(Form a)
+void    Bureaucrat::signForm(AForm a)
 {
     try
     {
