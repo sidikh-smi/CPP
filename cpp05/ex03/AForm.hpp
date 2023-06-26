@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 23:53:09 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 09:02:16 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/06/17 05:55:20 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/06/24 21:52:56 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
-#include <iostream>
-#include <exception>
-#include "AForm.hpp"
-class AForm;
+//#include <iostream>
+#include "Bureaucrat.hpp"
+class Bureaucrat;
 
-class Bureaucrat{
+class AForm{
     private:
-        const std::string name;
-        int i;
-    public :
-        Bureaucrat();
-        Bureaucrat(std::string n, int a);
-        Bureaucrat(const Bureaucrat &s);
-        Bureaucrat &operator=(const Bureaucrat &s);
-        ~Bureaucrat();
+         std::string name;
+        bool _signed;
+         int i;
+         int grade;
+    public:
+        AForm();
+        AForm(std::string n, int j, int l);
+        AForm(const AForm &a);
+        AForm &operator=(const AForm& a);
+        ~AForm();
         class GradeTooHighException : public std::exception
         {
             public:
@@ -38,14 +39,14 @@ class Bureaucrat{
             public:
                 const char*   what() const throw();
         };
-        std::string getName() const;
+         std::string getName() const;
+        bool getSigned() const;
+        int getGradeToSigne() const;
         int getGrade() const;
-        void    incrementing();
-        void    decrementing();
-        void    signForm(AForm a);
-        void    executeForm(AForm const & form);
+        void    beSigned(Bureaucrat a);
+        virtual void    execute(Bureaucrat const &executor) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &a);
+std::ostream& operator<<(std::ostream& os, const AForm& a);
 
 #endif

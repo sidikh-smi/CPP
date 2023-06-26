@@ -20,9 +20,14 @@ PresidentialPardonForm::PresidentialPardonForm()
     target = "";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string t) : AFrom("PresidentialPardonForm", 145, 137)
+PresidentialPardonForm::PresidentialPardonForm(std::string t) : AForm("PresidentialPardonForm", 25, 5)
 {
     target = t;
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &e) const

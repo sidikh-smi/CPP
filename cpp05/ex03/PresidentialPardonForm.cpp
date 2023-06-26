@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 10:53:21 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 10:50:24 by skhaliff         ###   ########.fr       */
+/*   Created: 2023/06/17 10:53:16 by skhaliff          #+#    #+#             */
+/*   Updated: 2023/06/25 13:09:21 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm()
+PresidentialPardonForm::PresidentialPardonForm()
 {
     target = "";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string t): AForm("RobotomyRequestForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(std::string t) : AForm("PresidentialPardonForm", 25, 5)
 {
     target = t;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm()
+PresidentialPardonForm::~PresidentialPardonForm()
 {
-
+    
 }
 
-void    RobotomyRequestForm::execute(Bureaucrat const &s) const
+void PresidentialPardonForm::execute(Bureaucrat const &e) const
 {
     if (getSigned())
     {
-        std::cout << "hello\n";
-        if (s.getGrade() < getGrade())
-        {
-            std::cout << "Drilling Noises" << std::endl;
-            // int l = rand() / 2;
-        }
+        if (e.getGrade() < getGrade())
+            std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
     }
     else
         throw AForm::GradeTooLowException();
