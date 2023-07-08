@@ -2,6 +2,7 @@
 #define BASE_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 class Base
 {
@@ -26,7 +27,7 @@ class C : public Base
 };
 
 Base *generate(void);
-void identify(Base* p);
-void identify(Base& p);
+// void identify(Base* p);
+// void identify(Base& p);
 
 #endif
