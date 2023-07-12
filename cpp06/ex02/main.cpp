@@ -3,5 +3,6 @@
 int main()
 {
     Base *s = generate();
-    (void)s;
+    Base &a = *s;
+    identify(a);
 }

@@ -2,6 +2,7 @@
 
 Base::~Base()
 {
+    std::cout << "Destructor" << std::endl;
 }
 
 Base *generate()
@@ -23,10 +24,23 @@ Base *generate()
 
 void identify(Base* p)
 {
-    
+   if (p != nullptr)
+   {
+    if(dynamic_cast<A*>(p))
+        std::cout << "Identifie is a pointer of A" << std::endl;
+    else if (dynamic_cast<B*>(p))
+        std::cout << "Identifie is a pointer of B" << std::endl;
+    else if(dynamic_cast<C*>(p))
+        std::cout << "Identifie is a pointer of C" << std::endl;
+   }
 }
 
-// void identify(Base& p)
-// {
-
-// }
+void identify(Base& p)
+{
+    if(dynamic_cast<A*>(&p))
+        std::cout << "Identifie is a reference of A" << std::endl;
+    else if (dynamic_cast<B*>(&p))
+        std::cout << "Identifie is a reference of B" << std::endl;
+    else if (dynamic_cast<C*>(&p))
+        std::cout << "Identifie is a reference of C" << std::endl;
+}
