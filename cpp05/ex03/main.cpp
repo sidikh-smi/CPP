@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:49:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/26 16:53:18 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/16 21:40:53 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
         // a.beSigned(b);
         // //a.execute(b);
         // b.executeForm(a);
-        s = q.makeForm("robotomy request", "sidi");
+        s = q.makeForm("presidential pardon", "sidi");
        // std::cout << "hello" << s->getGrade() << std::endl;
         s->beSigned(b);
         s->execute(b);
@@ -34,6 +34,7 @@ int main()
     }
     catch(...)
     {
-        std::cout << "hello\n";
+        std::cout << "Error\n";
     }
+    system("leaks Form");
 }
