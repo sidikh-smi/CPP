@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:52:17 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/17 10:29:55 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:18:10 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Bureaucrat::Bureaucrat(): name("Bureaucrat")
 {
     i = 0;
+}
+
+Bureaucrat::Bureaucrat(int n): name("Bureaucrat")
+{
+    i = n;
 }
 
 Bureaucrat::Bureaucrat(std::string n, int q): name(n)
@@ -59,28 +64,28 @@ int Bureaucrat::getGrade() const
 
 const char*   Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return("Too Low exception");
+    return("Exception: Too Low Grade");
 }
 
 const char*   Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return("Too Hight exception");
+    return("Exception: Too High Grade");
 }
 
 void    Bureaucrat::incrementing()
 {
     if (i < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (i > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (i > 150)
+        throw Bureaucrat::GradeTooLowException();
     i--;
 }
 
 void    Bureaucrat::decrementing()
 {
     if (i < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (i > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (i > 150)
+        throw Bureaucrat::GradeTooLowException();
     i++;
 }

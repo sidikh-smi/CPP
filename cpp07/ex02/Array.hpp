@@ -8,23 +8,41 @@ class Array
 {
     private :
         T *a;
-        int size;
+        int sizes;
     public:
-        Array(): a(NULL) , size(0){}
-        Array(int n){
+        Array(): a(NULL) , sizes(0){}
+        Array(int n)
+        {
             if(n > 0)
-                size = n;
+                sizes = n;
             else
                 throw ;
-            a = new T[size];
+            a = new T[sizes];
         }
-        Array(const Array& s){
-            
+        Array(const Array& s)
+        {
+            *this = s;
         }
-        ~Array(){
+        Array& operator=(const Array& s)
+        {
+            delete[] a;
+            sizes  = s.sizes;
+            a = new T[sizes];
+            for(int i = 0; i < sizes; i++)
+                a[i] = s.a[i];
+            return (*this);
+        }
+        int& operator[](int l)
+        {
+            if(l > sizes)
+                throw std::exception();
+            return (a[l]);
+        }
+        ~Array()
+        {
             delete[] a;
         }
-        int size() const {
+        int size() const{
             int  i = 0;
             while (a[i])
                 i++;

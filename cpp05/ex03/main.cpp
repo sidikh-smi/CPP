@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:49:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/16 21:40:53 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/19 00:52:57 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,21 @@
 int main()
 {
     Bureaucrat b("amine",4);
-    // ShrubberyCreationForm a("omar");
+    ShrubberyCreationForm a("omar");
     AForm *s;
+    std::cout << "hello\n";
     Intern q;
+    Intern p;
+    p = q;
     try{
-        // a.beSigned(b);
-        // //a.execute(b);
-        // b.executeForm(a);
+        a.beSigned(b);
+        a.execute(b);
+        b.executeForm(a);
         s = q.makeForm("presidential pardon", "sidi");
-       // std::cout << "hello" << s->getGrade() << std::endl;
+       std::cout << "hello" << s->getGrade() << std::endl;
         s->beSigned(b);
         s->execute(b);
-        // b.executeForm(s);
+        b.executeForm(*s);
     }
     catch(...)
     {

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:53:09 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 09:02:16 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/19 00:52:19 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Bureaucrat{
         void    incrementing();
         void    decrementing();
         void    signForm(AForm a);
-        void    executeForm(AForm const & form);
+        void    executeForm(const AForm  & form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &a);

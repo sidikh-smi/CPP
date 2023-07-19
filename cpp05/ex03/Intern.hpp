@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 11:46:55 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/16 22:01:36 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/19 00:48:37 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Intern
     public:
         
         Intern();
-        // Intern(const Intern &a);
-        // Intern operator=(const Intern &a);
+        Intern(const Intern &a);
+        Intern& operator=(const Intern &a);
         ~Intern();
         AForm* makeForm(std::string s, std::string j);
 };

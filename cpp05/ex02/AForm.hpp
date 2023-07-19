@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:55:20 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/24 21:52:56 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 11:01:15 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AForm{
         AForm(std::string n, int j, int l);
         AForm(const AForm &a);
         AForm &operator=(const AForm& a);
-        ~AForm();
+        virtual ~AForm();
         class GradeTooHighException : public std::exception
         {
             public:

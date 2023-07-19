@@ -6,14 +6,14 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:53:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 11:21:49 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/19 01:19:06 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137)
 {
     target = "";
 }
@@ -21,6 +21,18 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(std::string t): AForm("ShrubberyCreationForm", 145, 137)
 {
     target = t;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a) : AForm("ShrubberyCreationForm", 145, 137)
+{
+    target = a.target;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &a)
+{
+    if(this != &a)
+        target = a.target;
+    return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

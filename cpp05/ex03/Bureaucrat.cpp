@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:52:17 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 09:06:07 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/19 00:54:39 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ const char*   Bureaucrat::GradeTooHighException::what() const throw()
 void    Bureaucrat::incrementing()
 {
     if (i < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (i > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (i > 150)
+        throw Bureaucrat::GradeTooLowException();
     i--;
 }
 
 void    Bureaucrat::decrementing()
 {
     if (i < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (i > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (i > 150)
+        throw Bureaucrat::GradeTooLowException();
     i++;
 }
 
@@ -98,7 +98,7 @@ void    Bureaucrat::signForm(AForm a)
     }
 }
 
-void Bureaucrat::executeForm(AForm const &s)
+void Bureaucrat::executeForm(const AForm  &s) const
 {
     try
     {

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:53:09 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/17 09:48:13 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:18:18 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Bureaucrat{
         int i;
     public :
         Bureaucrat();
+        Bureaucrat(int n);
         Bureaucrat(const std::string n, int a);
         Bureaucrat(const Bureaucrat &s);
         Bureaucrat &operator=(const Bureaucrat &s);

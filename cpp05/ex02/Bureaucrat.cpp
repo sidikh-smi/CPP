@@ -70,18 +70,18 @@ const char*   Bureaucrat::GradeTooHighException::what() const throw()
 void    Bureaucrat::incrementing()
 {
     if (i < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (i > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (i > 150)
+        throw Bureaucrat::GradeTooLowException();
     i--;
 }
 
 void    Bureaucrat::decrementing()
 {
     if (i < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (i > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (i > 150)
+        throw Bureaucrat::GradeTooLowException();
     i++;
 }
 

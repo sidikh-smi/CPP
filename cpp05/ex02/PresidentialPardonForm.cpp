@@ -1,6 +1,3 @@
-#include "PresidentialPardonForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "PresidentialPardonForm.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -9,13 +6,13 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:53:16 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/24 21:32:12 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/19 01:22:29 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm():AForm("PresidentialPardonForm", 25, 5)
 {
     target = "";
 }
@@ -25,9 +22,20 @@ PresidentialPardonForm::PresidentialPardonForm(std::string t) : AForm("President
     target = t;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &a): AForm("PresidentialPardonForm", 25, 5)
 {
-    
+    *this = a;
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &a)
+{
+    if(this != &a)
+        target = a.target;
+    return (*this);
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{  
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &e) const

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:53:18 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/24 21:45:57 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 04:59:12 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class PresidentialPardonForm : public AForm
     public :
         PresidentialPardonForm();
         PresidentialPardonForm(std::string t);
-        //PresidentialPardonForm(const PresidentialPardonForm &a);
-        //PresidentialPardonForm operator=();
+        PresidentialPardonForm(const PresidentialPardonForm &a);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm &a);
         ~PresidentialPardonForm();
         void    execute(Bureaucrat const &executor) const;
 };

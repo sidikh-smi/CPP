@@ -6,13 +6,18 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:54:33 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/17 10:42:24 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:56:13 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form():name("Form"), i(0), grade(0)
+{
+    _signed = false;
+}
+
+Form::Form(int n, int j):name("Form"), i(n), grade(j)
 {
     _signed = false;
 }
@@ -83,11 +88,10 @@ std::ostream& operator<<(std::ostream& os, const Form& a)
 
 void    Form::beSigned(Bureaucrat a) 
 {
+    // std::cout << a.getGrade() << std::endl;
+    // std::cout << i << std::endl;
     if (a.getGrade() <= i)
         _signed = true;
     else
-    {
-        std::cout << "ERROR\n";
         throw Form::GradeTooLowException();
-    }
 }

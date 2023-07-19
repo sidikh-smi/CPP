@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:54:33 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/24 21:42:40 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 04:20:17 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void    AForm::beSigned(Bureaucrat a)
         _signed = true;
     else
     {
-        std::cout << "ERROR\n";
         throw AForm::GradeTooLowException();
     }
 }

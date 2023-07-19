@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:53:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 10:53:56 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 05:05:22 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class ShrubberyCreationForm : public AForm
     public :
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string t);
-        //ShrubberyCreationForm(const ShrubberyCreationForm &a);
-        //ShrubberyCreationForm operator=();
+        ShrubberyCreationForm(const ShrubberyCreationForm &a);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm &a);
         ~ShrubberyCreationForm();
         void    execute(Bureaucrat const &executor) const;
 };

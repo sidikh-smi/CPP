@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:55:20 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/17 10:37:54 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:55:48 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Form{
         const int grade;
     public:
         Form();
+        Form(int n, int j);
         Form(std::string n, int j, int l);
         Form(const Form &a);
         Form &operator=(const Form& a);
@@ -39,7 +40,7 @@ class Form{
             public:
                 const char*   what() const throw();
         };
-         std::string getName() const;
+        std::string getName() const;
         bool getSigned() const;
         int getGradeToSigne() const;
         int getGrade() const;
