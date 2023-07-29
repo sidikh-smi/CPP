@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:53:09 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/17 10:18:18 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/20 06:23:51 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat{
     private:
         const std::string name;
-        int i;
+        int grade;
     public :
         Bureaucrat();
         Bureaucrat(int n);

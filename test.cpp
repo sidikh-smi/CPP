@@ -1,74 +1,86 @@
 #include <iostream>
+#include <vector>
 
-// template<typename T>
-// class Array
-// {
-//     T *a;
-//     int sizes;
-//     public:
-//         Array(int n) {
-//             a  = new T[n];
-//             sizes = n;
-//         }
-//         void   charge(T *s){
-//             int i = 0;
-//             for(int i = 0; i < sizes; i++)
-//             {
-//                 a[i] = s[i];
-//             }
-//         }
-//         Array& operator[](int l)
-//         {
-//             if(l > sizes)
-//                 throw ;
-//             return (a[l]);
-//         }
-//         ~Array(){
-//             delete[] a;
-//         }
-//         int size()
-//         {
-//             int i = 0;
-//             while (a[i])
-//             {
-//                 i++;
-//             }
-//             return i;
-//         }
-// };
-
-const int size = 10;
-
-class Array{
-    int a[2];
+class Span
+{
+    std::vector<int> myarray;
+    const int N;
     public:
-        Array(){
-            for(int k = 0; k < size; k++)
-                a[k] = k;
-        }
-        // int& operator[](int i){
-        //     if(i > size)
-        //         throw std::exception();
-        //     return (a[i]);
-        // }
+        int i;
+        Span(int i);
+        void addNumber(int i);
+        void t_it();
+        int shortest();
+        int longest();
 };
 
+Span::Span(const int i): N(i), i(0)
+{
+}
+
+void    Span::addNumber(int a)
+{
+    //std::cout << i << std::endl;
+    if(i < N)
+    {
+        myarray.push_back(a);
+        //std::cout << a << std::endl;
+        i++;
+    }
+    else
+        throw std::exception();
+}
+
+void Span::t_it()
+{   
+    std::cout << myarray[0] << std::endl;
+    std::cout << myarray[1] << std::endl;
+    std::cout << myarray[2] << std::endl;
+    std::cout << myarray.front() << std::endl;
+    std::cout << myarray.back() << std::endl;
+}
+
+int Span::longest()
+{
+    std::sort(myarray.begin(), myarray.end());
+    int a = myarray.back() - myarray.front();
+    return a;
+}
+
+int Span::shortest()
+{
+    std::sort(myarray.begin(), myarray.end());
+    std::vector<int>::iterator it = myarray.begin();
+    int a = *(it + 1) - *it;
+    for( it = it + 1; it != myarray.end(); it++)
+    {
+        int p = *(it + 1) - *it;
+        if(p < a)
+            a = p;
+    }
+    return a;
+}
 int main()
 {
-    // Array<int> s(4);
+    Span sp(5);
 
-    // int z[] = {1, 2, 3, 4};
-    // s.charge(z);
-
-    // std::cout << s.size() << std::endl;
-    Array s;
     try
     {
-        s[0] = 10;
-        // std::cout << s[0] << std::endl;
+        // sp.addNumber(6);
+        // sp.addNumber(8);
+        // sp.addNumber(10);
+        // sp.t_it();
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+        // sp.t_it();
+        std::cout << sp.shortest() << std::endl;
+        // std::cout << sp.longest() << std::endl;
     }
     catch(...)
     {
-        std::cout << "Error out of bound" << std::endl;
+        std::cerr <<"errorrr" << '\n';
     }
 }

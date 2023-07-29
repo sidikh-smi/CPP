@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:49:29 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/17 11:09:27 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/21 09:18:00 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 
 int main()
 {
-    Bureaucrat b("amine",44);
-    ShrubberyCreationForm a("omar");
-    try{
+    Bureaucrat b("amine",4);
+    PresidentialPardonForm a("omar");
+    try
+    {
         a.beSigned(b);
-        //a.execute(b);
+        a.execute(b);
         b.executeForm(a);
     }
-    catch(...)
+    catch(std::exception &e)
     {
-        std::cout << "hello\n";
+        std::cerr << "Exeception : " << e.what() << std::endl;
     }
 }

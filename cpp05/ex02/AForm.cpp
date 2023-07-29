@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:54:33 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/17 04:20:17 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/21 10:36:14 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ std::ostream& operator<<(std::ostream& os, const AForm& a)
 
 void    AForm::beSigned(Bureaucrat a) 
 {
+    std::cout << i << " signed " << std::endl;
     if (a.getGrade() <= i)
         _signed = true;
     else

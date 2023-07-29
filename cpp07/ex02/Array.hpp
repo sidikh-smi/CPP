@@ -10,22 +10,34 @@ class Array
         T *a;
         int sizes;
     public:
-        Array(): a(NULL) , sizes(0){}
+        Array(): a(NULL) , sizes(0)
+        {
+            std::cout<< "default" << std::endl;
+        }
         Array(int n)
         {
             if(n > 0)
                 sizes = n;
             else
                 throw ;
+           // std::cout << "from here" << std::endl;
             a = new T[sizes];
         }
         Array(const Array& s)
         {
-            *this = s;
+            std::cout << "hello\n";
+            sizes  = s.sizes;
+            a = new T[sizes];
+            for(int i = 0; i < sizes; i++)
+                a[i] = s.a[i];
+            // *this = s;
         }
         Array& operator=(const Array& s)
         {
-            delete[] a;
+            // std::cout << sizes << std::endl;
+            std::cout <<"-->"<< this->a << std::endl;
+            if(a)
+                delete[] a;
             sizes  = s.sizes;
             a = new T[sizes];
             for(int i = 0; i < sizes; i++)
@@ -34,13 +46,17 @@ class Array
         }
         int& operator[](int l)
         {
-            if(l > sizes)
+            if(l > sizes || l < 0)
+            {
+                std::cout << "exception\n";
                 throw std::exception();
+            }
             return (a[l]);
         }
         ~Array()
         {
-            delete[] a;
+            if(a)
+                delete[] a;
         }
         int size() const{
             int  i = 0;

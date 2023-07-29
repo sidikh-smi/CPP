@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:54:33 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/17 10:56:13 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/21 09:20:09 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ std::string Form::getName() const
 
 bool Form::getSigned() const
 {
-    return _signed;
+    return (this->_signed);
 }
 
 int Form::getGrade() const
@@ -82,16 +82,13 @@ std::ostream& operator<<(std::ostream& os, const Form& a)
     os << a.getGradeToSigne();
     os << std::endl;
     os << a.getGrade();
-    os << std::endl;
     return os;
 }
 
 void    Form::beSigned(Bureaucrat a) 
 {
-    // std::cout << a.getGrade() << std::endl;
-    // std::cout << i << std::endl;
     if (a.getGrade() <= i)
-        _signed = true;
+        this->_signed = 1;
     else
         throw Form::GradeTooLowException();
 }

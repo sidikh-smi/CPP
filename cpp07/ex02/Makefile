@@ -1,5 +1,5 @@
 NAME = main
-SRCS = main2.cpp
+SRCS = main.cpp
 
 CC = c++
 RM = rm -rf

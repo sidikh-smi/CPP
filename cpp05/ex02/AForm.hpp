@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:55:20 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/17 11:01:15 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/21 08:53:25 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class AForm{
         int getGradeToSigne() const;
         int getGrade() const;
         void    beSigned(Bureaucrat a);
-        virtual void    execute(Bureaucrat const &executor) const = 0;
+        virtual void    execute(Bureaucrat const &executor)const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& a);

@@ -10,7 +10,7 @@ void    easyfind(T &s, int i)
     typename T::iterator found;
 
     found = std::find(s.begin(), s.end(), i);
-    std::cout << *found << std::endl;
+    std::cout << *found;
 }
 
 #endif

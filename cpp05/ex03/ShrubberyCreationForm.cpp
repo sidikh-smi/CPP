@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 10:53:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/19 01:20:50 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/21 09:12:05 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void    ShrubberyCreationForm::execute(Bureaucrat const &a) const
             out_filename.close();
             std::cout << "file created" << std::endl;
         }
+        else
+            std::cout << "file didn't created because of Grade to execute" << std::endl;
     }
     else
         throw AForm::GradeTooLowException();

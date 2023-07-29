@@ -6,14 +6,13 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:55:20 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/07/18 23:32:15 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/20 07:29:53 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
-//#include <iostream>
 #include "Bureaucrat.hpp"
 class Bureaucrat;
 

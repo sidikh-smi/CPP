@@ -1,13 +1,17 @@
 #include "easyfind.hpp"
-#include <vector>
+#include <array>
 
 int main()
 {
-    std::vector<int> num;
+    std::array<int, 10> myarray= {1, 2, 3, 4, 55, 6, 7, 8, 9, 10};
 
-    num.push_back(1);
-    num.push_back(2);
-    num.push_back(3);
+    // int i = 0;
 
-    easyfind(num, 4);
+    // while (i < 10)
+    // {
+    //     myarray.push_back(i);
+    //     std::cout << myarray[i];
+    //     i++;
+    // }
+    easyfind(myarray, 55);
 }

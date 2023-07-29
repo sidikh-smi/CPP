@@ -6,14 +6,15 @@
 
 typedef struct Data
 {
-    int *a;
+    int a;
 }Data;
 
 class  Serializer
 {
+    private:
+        Serializer();
+        ~Serializer();
     public:
-    Serializer();
-    ~Serializer();
         static uintptr_t serialize(Data* ptr);
         static Data* deserialize(uintptr_t raw);
 };

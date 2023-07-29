@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:52:17 by skhaliff          #+#    #+#             */
-/*   Updated: 2023/06/25 09:06:07 by skhaliff         ###   ########.fr       */
+/*   Updated: 2023/07/21 10:41:01 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,37 @@
 
 Bureaucrat::Bureaucrat(): name("Bureaucrat")
 {
-    i = 0;
+    grade = 1;
+}
+
+Bureaucrat::Bureaucrat(int n): name("Bureaucrat")
+{
+    if(n < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if(n > 150)
+        throw Bureaucrat::GradeTooLowException();
+    grade = n;
 }
 
 Bureaucrat::Bureaucrat(std::string n, int q): name(n)
 {
-    i = q;
+    if(q < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if(q > 150)
+        throw Bureaucrat::GradeTooLowException();
+    grade = q;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &a)
+Bureaucrat::Bureaucrat(const Bureaucrat &a): name(a.name)
 {
-    i = a.i;
+    grade = a.grade;
 }
 
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &a)
 {
     if (this != &a)
-        i = a.i;
+        grade = a.grade;
     return(*this);
 }
 
@@ -54,7 +67,7 @@ std::string Bureaucrat::getName() const
 
 int Bureaucrat::getGrade() const
 {
-    return(i);
+    return(grade);
 }
 
 const char*   Bureaucrat::GradeTooLowException::what() const throw()
@@ -69,28 +82,28 @@ const char*   Bureaucrat::GradeTooHighException::what() const throw()
 
 void    Bureaucrat::incrementing()
 {
-    if (i < 1)
-        throw Bureaucrat::GradeTooHighException();
-    else if (i > 150)
+    if (grade < 1)
+        throw GradeTooHighException();
+    else if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    i--;
+    grade--;
 }
 
 void    Bureaucrat::decrementing()
 {
-    if (i < 1)
+    if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
-    else if (i > 150)
+    else if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    i++;
+    grade++;
 }
 
-void    Bureaucrat::signForm(AForm a)
+void    Bureaucrat::signForm(AForm &a)
 {
     try
     {
         a.beSigned(*this);
-        std::cout << name << " signed " << a.getName() << std::endl;
+        std::cout << name << " ------------signed " << a.getName() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -98,7 +111,7 @@ void    Bureaucrat::signForm(AForm a)
     }
 }
 
-void Bureaucrat::executeForm(AForm const &s)
+void Bureaucrat::executeForm(const AForm  &s) const
 {
     try
     {

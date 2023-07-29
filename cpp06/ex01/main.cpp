@@ -1,16 +1,23 @@
 #include "Serializer.hpp"
 
-int main()
+int	main(void)
 {
-    Serializer v;
-    Data *s = new Data();
-    int i = 5;
-    s->a = &i;
-
-    std::cout << "Before : " << i << std::endl;
-    std::cout << "Before : " << &i << std::endl;
-    std::cout << "Serializer : " << v.serialize(s) << std::endl;
-    int *x = reinterpret_cast<int*>(v.serialize(s));
-    std::cout << "After : " << *x << std::endl;
-    std::cout << "Deselizer : " << v.deserialize(v.serialize(s)) << std::endl;
+	Data	data;
+    data.a = 55;
+	uintptr_t	serializedPointerAsInt = Serializer::serialize(&data);
+	Data *		deserializedPointer = Serializer::deserialize(serializedPointerAsInt);
+	
+	if (deserializedPointer == &data)
+		std::cout << "Successful serialization and deserialization."
+			<< std::endl << std::endl;
+	else
+		std::cout << "Failed serialization and deserialization: "
+			<< std::endl << std::endl;
+	std::cout << "Original " << "Data structure stored at address [" << &data << "]"
+		<< "\n\t- value : " << data.a << std::endl;
+	std::cout << "Pointer to data structure serialized as int: "
+		<< serializedPointerAsInt << std::endl << std::endl;
+	std::cout << "Deserialized " << "Data structure stored at address [" << &deserializedPointer << "]"
+		<< "\n\t- value : " << deserializedPointer->a << std::endl;
+	return (0);
 }
