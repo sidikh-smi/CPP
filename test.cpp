@@ -12,6 +12,7 @@ class Span
         void t_it();
         int shortest();
         int longest();
+        void    add_range_iterator(std::vector<int>::iterator it, std::vector<int>::iterator its);
 };
 
 Span::Span(const int i): N(i), i(0)
@@ -36,8 +37,8 @@ void Span::t_it()
     std::cout << myarray[0] << std::endl;
     std::cout << myarray[1] << std::endl;
     std::cout << myarray[2] << std::endl;
-    std::cout << myarray.front() << std::endl;
-    std::cout << myarray.back() << std::endl;
+    std::cout << myarray[3] << std::endl;
+    std::cout << myarray[4] << std::endl;
 }
 
 int Span::longest()
@@ -60,24 +61,40 @@ int Span::shortest()
     }
     return a;
 }
+
+void Span::add_range_iterator(std::vector<int>::iterator it, std::vector<int>::iterator its)
+{
+    it = myarray.begin() + 2;
+    its = myarray.end();
+    int a = 0;
+
+    while(*it != *its)
+    {
+        // std::cout << "hello\n";
+        *it = a;
+        a++;
+        it++;
+    }
+}
+
 int main()
 {
     Span sp(5);
 
     try
     {
-        // sp.addNumber(6);
-        // sp.addNumber(8);
-        // sp.addNumber(10);
-        // sp.t_it();
         sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
-        // sp.t_it();
-        std::cout << sp.shortest() << std::endl;
+        // std::cout << sp.shortest() << std::endl;
         // std::cout << sp.longest() << std::endl;
+        std::vector<int>::iterator it;
+        std::vector<int>::iterator its;
+
+        sp.add_range_iterator(it, its);
+        sp.t_it();
     }
     catch(...)
     {

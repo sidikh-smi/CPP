@@ -19,6 +19,7 @@ class Span
         void    addNumber(int i);
         int shortestSpan();
         int longestSpan();
+        void    add_range_iterator();
 };
 
 #endif
