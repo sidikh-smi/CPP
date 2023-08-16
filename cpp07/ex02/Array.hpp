@@ -2,6 +2,8 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include<cstdlib>
+
 
 template<typename T>
 class Array
@@ -30,7 +32,6 @@ class Array
             a = new T[sizes];
             for(int i = 0; i < sizes; i++)
                 a[i] = s.a[i];
-            // *this = s;
         }
         Array& operator=(const Array& s)
         {
@@ -46,7 +47,7 @@ class Array
         }
         int& operator[](int l)
         {
-            if(l > sizes || l < 0)
+            if(l >= sizes || l < 0)
             {
                 std::cout << "exception\n";
                 throw std::exception();

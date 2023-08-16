@@ -41,7 +41,7 @@ int main(int, char**)
     }
     try
     {
-       numbers[2] = 0;
+        numbers[2] = 0;
         std::cout << "number[2] = " << numbers[2] << std::endl;
     }
     catch(const std::exception& e)
@@ -54,6 +54,7 @@ int main(int, char**)
     }
     catch(const std::exception& e)
     {
+        
         std::cerr << e.what() << '\n';
     }
 
