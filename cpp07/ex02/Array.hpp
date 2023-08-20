@@ -27,7 +27,6 @@ class Array
         }
         Array(const Array& s)
         {
-            std::cout << "hello\n";
             sizes  = s.sizes;
             a = new T[sizes];
             for(int i = 0; i < sizes; i++)
@@ -35,8 +34,6 @@ class Array
         }
         Array& operator=(const Array& s)
         {
-            // std::cout << sizes << std::endl;
-            std::cout <<"-->"<< this->a << std::endl;
             if(a)
                 delete[] a;
             sizes  = s.sizes;
@@ -48,10 +45,7 @@ class Array
         int& operator[](int l)
         {
             if(l >= sizes || l < 0)
-            {
-                std::cout << "exception\n";
                 throw std::exception();
-            }
             return (a[l]);
         }
         ~Array()
