@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 class Span
@@ -64,11 +65,11 @@ int Span::shortest()
 
 void Span::add_range_iterator(std::vector<int>::iterator it, std::vector<int>::iterator its)
 {
-    it = myarray.begin() + 2;
+    it = myarray.begin();
     its = myarray.end();
     int a = 0;
 
-    while(*it != *its)
+    while(it != its)
     {
         // std::cout << "hello\n";
         *it = a;
@@ -79,7 +80,7 @@ void Span::add_range_iterator(std::vector<int>::iterator it, std::vector<int>::i
 
 int main()
 {
-    Span sp(5);
+    Span sp(10);
 
     try
     {

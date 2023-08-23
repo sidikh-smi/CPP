@@ -21,14 +21,13 @@ class Array
             if(n > 0)
                 sizes = n;
             else
-                throw ;
-           // std::cout << "from here" << std::endl;
-            a = new T[sizes];
+                throw std::exception();
+            a = new T[sizes]();
         }
         Array(const Array& s)
         {
             sizes  = s.sizes;
-            a = new T[sizes];
+            a = new T[sizes]();
             for(int i = 0; i < sizes; i++)
                 a[i] = s.a[i];
         }
@@ -37,12 +36,12 @@ class Array
             if(a)
                 delete[] a;
             sizes  = s.sizes;
-            a = new T[sizes];
+            a = new T[sizes]();
             for(int i = 0; i < sizes; i++)
                 a[i] = s.a[i];
             return (*this);
         }
-        int& operator[](int l)
+        int& operator[](int l) const
         {
             if(l >= sizes || l < 0)
                 throw std::exception();

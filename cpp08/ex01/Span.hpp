@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
     private:
-        int N;
         std::vector<int> myarray;
+        int N;
         int index;
     public:
         Span();
@@ -19,7 +20,7 @@ class Span
         void    addNumber(int i);
         int shortestSpan();
         int longestSpan();
-        void    add_range_iterator();
+        void    add_range_iterator(std::vector<int>::iterator it, std::vector<int>::iterator its);
 };
 
 #endif

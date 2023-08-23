@@ -1,8 +1,6 @@
 #include "Span.hpp"
 
-Span::Span()
-{
-}
+Span::Span(): N(0), index(0) {}
 
 Span::Span(int i)
 {
@@ -43,7 +41,7 @@ void    Span::addNumber(int i)
 
 int Span::longestSpan()
 {
-    if(myarray.empty())
+    if(myarray.size() < 2)
         throw std::exception();
     std::sort(myarray.begin(), myarray.end());
     int a =  myarray.back() - myarray.front();
@@ -52,7 +50,7 @@ int Span::longestSpan()
 
 int Span::shortestSpan()
 {
-    if(myarray.empty() || !myarray.end())
+    if(myarray.size() < 2)
         throw std::exception();
     std::sort(myarray.begin(), myarray.end());
     std::vector<int>::iterator it = myarray.begin();
@@ -64,4 +62,27 @@ int Span::shortestSpan()
             a = p;
     }
     return a;
+}
+
+void Span::add_range_iterator(std::vector<int>::iterator it, std::vector<int>::iterator its)
+{
+    std::vector<int>::iterator it1 = it;
+    std::vector<int>::iterator its1 = its;
+    size_t i = 0;
+
+    while (it1 != its1)
+    {
+        i++;
+        it1++;
+    }
+    if(i > N - this->myarray.size())
+    {
+        std::cout << "exception ";
+        throw std::exception();
+    }
+    while(it != its)
+    {
+        this->myarray.push_back(*it);
+        it++;
+    }
 }

@@ -3,9 +3,8 @@
 
 #include <iostream>
 
-template<typename T>
-
-void    iter(T *a, int size, void f(T))
+template<typename T, typename F>
+void    iter(T *a, int size,  F f(T))
 {
     for(int i = 0; i < size; i++)
         f(a[i]);
