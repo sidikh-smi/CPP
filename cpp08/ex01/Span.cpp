@@ -57,7 +57,7 @@ int Span::shortestSpan()
     std::sort(myarray.begin(), myarray.end());
     std::vector<int>::iterator it = myarray.begin();
     int a = *(it + 1) - *it;
-    for( it = it + 1; it != myarray.end(); it++)
+    for( it = it + 1; it < myarray.end() - 1; it++)
     {
         int p = *(it + 1) - *it;
         if(p < a)
