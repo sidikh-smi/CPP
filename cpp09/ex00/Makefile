@@ -1,5 +1,5 @@
 NAME = btc
-SRCS = main.cpp
+SRCS = main.cpp Btc.cpp
 
 CC = c++
 RM = rm -rf
